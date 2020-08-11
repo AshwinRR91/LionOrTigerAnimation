@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LionOrTigerAnimation</string>
+    <string name="playerOneWins">Player One Wins</string>
+    <string name="playerTwoWins">Player Two Wins</string>
 </resources>

@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        winnerText = findViewById(R.id.winnerText);
 
 
     }
@@ -54,21 +55,21 @@ public class MainActivity extends AppCompatActivity {
     public void checkIfPlayerOneWins(String tag) {
         playerOne += tag;
 
-        if((playerOne.contains("a")&&playerOne.contains("b")&&playerOne.contains("c"))
-                ||(playerOne.contains("a")&&playerOne.contains("d")&&playerOne.contains("g"))
-        ||(playerOne.contains("b")&&playerOne.contains("e")&&playerOne.contains("h"))
-                ||(playerOne.contains("c")&&playerOne.contains("f")&&playerOne.contains("i"))
-                ||(playerOne.contains("d")&&playerOne.contains("e")&&playerOne.contains("f"))
-                ||(playerOne.contains("g")&&playerOne.contains("h")&&playerOne.contains("i"))
-        )
+        if ((playerOne.contains("a") && playerOne.contains("b") && playerOne.contains("c"))
+                || (playerOne.contains("a") && playerOne.contains("d") && playerOne.contains("g"))
+                || (playerOne.contains("b") && playerOne.contains("e") && playerOne.contains("h"))
+                || (playerOne.contains("c") && playerOne.contains("f") && playerOne.contains("i"))
+                || (playerOne.contains("d") && playerOne.contains("e") && playerOne.contains("f"))
+                || (playerOne.contains("g") && playerOne.contains("h") && playerOne.contains("i"))
+        ) {
+            if (winnerText.getText() == "") {
+                winnerText.setText(R.string.playerOneWins);
+            }
 
-        {
-            winnerText = findViewById(R.id.winnerText);
-            winnerText.setText("Player One Wins");
+
         }
-
-
     }
+
     public void checkIfPlayerTwoWins(String tag){
         playerTwo += tag;
 
@@ -81,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
         )
 
         {
-            winnerText = findViewById(R.id.winnerText);
-            winnerText.setText("Player Two Wins");
+            if (winnerText.getText() == "") {
+                winnerText.setText(R.string.playerTwoWins);
+            }
         }
 
 
